@@ -43,6 +43,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://*.up.railway.app/",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://toolz-production.up.railway.app",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
