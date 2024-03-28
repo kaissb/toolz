@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ["toolz-production.up.railway.app"]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ORIGIN_WHITELIST = ["https://toolz-production.up.railway.app"]
+CORS_ORIGIN_WHITELIST = ["https://toolz-production.up.railway.app/"]
 
 # Application definition
 
