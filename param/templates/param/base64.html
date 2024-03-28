@@ -1,0 +1,32 @@
+{% extends "param/base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4">
+    <h1 class="text-xl font-bold my-4">Encode/Decode Base64</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label for="input_text" class="block text-sm font-medium text-gray-700">Text</label>
+            <textarea name="input_text" id="input-text" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm" row="4">{{ input_text }}</textarea>
+        </div>
+        <div class="mb-4">
+            <label for="operation" class="block text-sm font-medium text-gray-700">Operation</label>
+            <select name="operation" id="operation" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm">
+                <option value="encode" {% if operation == "encode" %}selected{% endif %}>Encode</option>
+                <option value="decode" {% if operation == "decode" %}selected{% endif %}>Decode</option>
+            </select>
+        </div>
+        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Submit</button>
+    </form>
+    {% if result %}
+        <div class="mt-4 p-4 bg-gray-100 border border-md">
+            <strong>Result:</strong> <span>{{ result }}</span>
+        </div>
+    {% endif %}
+    {% if error %}
+        <div class="mt-4 p-4 bg-red-100 text-red-800 border border-md">
+            <strong>Error:</strong> <span>{{ error }}</span>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}

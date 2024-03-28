@@ -1,0 +1,32 @@
+{% extends "param/base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4">
+    <h1 class="text-xl font-bold my-4">Timestamp Converter</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label for="input_value" class="block text-sm font-medium text-gray-700">Text</label>
+            <input type="text" name="input_value" id="input-value" value="{{ input_value }}" placeholder="e.g. 1711587684, 2024-03-27 05:22:34, 2024-03-27" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm">
+        </div>
+        <div class="mb-4">
+            <label for="operation" class="block text-sm font-medium text-gray-700">Convert to</label>
+            <select name="operation" id="operation" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm">
+                <option value="to_human" {% if operation == "to_human" %}selected{% endif %}>Human Readable Time</option>
+                <option value="to_timestamp" {% if operation == "to_timestamp" %}selected{% endif %}>To Unix Timestamp</option>
+            </select>
+        </div>
+        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Convert</button>
+    </form>
+    {% if result %}
+        <div class="mt-4 p-4 bg-gray-100 border border-md">
+            <strong>Result:</strong> <span>{{ result }}</span>
+        </div>
+    {% endif %}
+    {% if error %}
+        <div class="mt-4 p-4 bg-red-100 text-red-800 border border-md">
+            <strong>Error:</strong> <span>{{ error }}</span>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}

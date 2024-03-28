@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="Toolz">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-100">
+        <nav class="bg-gray-800 p-4">
+            <div class="container mx-auto">
+                <div class="flex items-center justify-between">
+                    <div class="text-white">
+                        <a href="/" class="text-lg font-semibold">Toolz</a>
+                    </div>
+                    <div>
+                        <a href="/base64" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-memium">Encode/Decode Base64</a>
+                        <a href="/md5" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-memium">Hash MD5</a>
+                        <a href="/url" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-memium">Encode/Decode URLs</a>
+                        <a href="/json" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-memium">JSON Formatter</a>
+                        <a href="/timestamp" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-memium">Timestamp converter</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container mx-auto mt-8">
+            {% block content %}
+            
+            {% endblock content %}
+
+        </div>
+    </body>
+</html>
