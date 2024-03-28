@@ -7,12 +7,18 @@ from datetime import datetime, timezone
 from django.shortcuts import render
 
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 # Create your views here.
 def index(request):
     pass
 
 
 def base64(request):
+    logger.debug("Origin: %s", request.headers.get("Origin"))
     context = {
         "result": "",
         "input_text": "",

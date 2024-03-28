@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import *
 
+
 urlpatterns = [
     path("", base64, name="base64"),
     path("md5/", hash_md5, name="md5"),
