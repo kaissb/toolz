@@ -35,6 +35,12 @@ CORS_ORIGIN_WHITELIST = [
     "https://*.up.railway.app/",
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "https://toolz-production.up.railway.app/",
+    "https://toolz-production.up.railway.app/*",
+    "https://*.up.railway.app/",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
