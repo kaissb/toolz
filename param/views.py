@@ -19,6 +19,9 @@ def index(request):
 
 def base64(request):
     logger.debug("Origin: %s", request.headers.get("Origin"))
+    print("Origin header:", request.headers.get("Origin"))
+    print("Origin host:", request.headers.get("Host"))
+    print("Origin method:", request.method)
     context = {
         "result": "",
         "input_text": "",
